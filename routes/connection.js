@@ -1,14 +1,10 @@
-/**
- * Created by eranda on 9/20/16.
- */
-
 module.exports = {
     connection: function () {
         var mysql = require('mysql');
         var connection = mysql.createConnection({
             host: 'localhost',
-            user: 'eranda',
-            password: 'password'
+            user: 'shopping',
+            password: 'shopping'
         });
 
         connection.connect();

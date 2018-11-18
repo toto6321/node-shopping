@@ -30,3 +30,8 @@ INSERT INTO `products` (`id`, `name`, `description`, `price`, `date`, `status`) 
 (8, 'Cumque architecto', 'Dolorem et repellat sed velit veritatis delectus. Deleniti eveniet voluptatum natus ut ullam. Repellat consequatur non eligendi officiis eum veniam', 24, '2016-09-24', 1),
 (9, 'Aut commodi occaecati', 'Repudiandae nihil sit incidunt. Qui minima maxime quibusdam. Quod doloribus accusantium voluptatem beatae enim nisi architecto. Harum rem veniam voluptatum', 32, '2016-09-16', 1),
 (10, 'Eos modi', 'Veritatis similique est ut iusto sint. Rerum natus dolorem ipsa soluta voluptas sed et iste. Officiis est modi. Optio facilis sint commodi veritatis', 643, '2016-09-15', 1);
+
+
+CREATE USER 'shopping'@'%' IDENTIFIED BY 'shopping';
+GRANT ALL PRIVILEGES ON node_shopping.* TO 'shopping';
+FLUSH PRIVILEGES;
