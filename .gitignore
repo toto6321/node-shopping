@@ -1,0 +1,10 @@
+# idea project files
+.idea/
+
+# node_modules
+node_modules
+
+# npm-debug.log
+npm-debug.log
+
+
