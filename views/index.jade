@@ -1,6 +1,9 @@
 extends layout
 
 block content
+    div(class='top')
+        span= email
+        span: a(href='./logout')
     div(class='container')
         h1= title
         p Welcome to #{title}

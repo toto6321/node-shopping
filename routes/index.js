@@ -46,7 +46,11 @@ router.post('/', function (req, res) {
 });
 
 router.get('/', function (req, res) {
-    res.render('index', {title: 'Node Shopping', data: data, currency: 'Rs. ', cart_data: cart_data, cart: cart});
+    if(!req.session.email){
+        res.redirect('/users/login/');
+    }else{
+        res.render('index', {title: 'Node Shopping', data: data, currency: 'Rs. ', cart_data: cart_data, cart: cart});
+    }
 });
 
 router.get('/pay', function (req, res) {

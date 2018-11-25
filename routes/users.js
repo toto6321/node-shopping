@@ -12,7 +12,6 @@ router.use(session({
 }));
 
 
-
 // login page
 router.get('/', function (req, res, next) {
     res.render('login', {});
@@ -53,7 +52,7 @@ router.post('/login', function (req, res, next) {
                 })
             } else if (password === rows[0].password) {
                 req.session.email = email;
-                res.redirect('../');
+                res.render('index', {email: email});
             } else {
                 res.json({
                     error: {
@@ -113,8 +112,8 @@ router.post('/signup', function (req, res, next) {
                                 message: 'internal error!'
                             }
                         });
-                    } else{
-                        res.redirect('../');
+                    } else {
+                        res.render('index', {email: undefined});
                     }
                 });
 
@@ -122,6 +121,11 @@ router.post('/signup', function (req, res, next) {
         }
 
     });
+});
+
+router.get('logout', function (req, res, next) {
+    req.session.email = '';
+    res.redirect('/index');
 });
 
 
